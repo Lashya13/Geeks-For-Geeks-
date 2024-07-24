@@ -1,0 +1,44 @@
+Palindromic Array
+
+https://www.geeksforgeeks.org/problems/palindromic-array-1587115620/1?page=1&category=Arrays&difficulty=School&sortBy=submissions
+
+Solution:
+
+# Your task is to complete this function
+# Function should return true/false
+def PalinArray(arr):
+    # Code here
+    cnt=0
+    for value in arr:
+        temp =value
+        rev=0
+        while (value>0):
+            dig =value%10
+            rev =rev*10+dig
+            value =value//10
+              
+        if rev==temp:
+            cnt+=1
+            continue
+        else:
+            return False
+    if cnt == len(arr):
+        return True
+
+
+
+
+#{ 
+ # Driver Code Starts
+# Driver Program
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().strip().split()))
+        if PalinArray(arr):
+            print("true")
+        else:
+            print("false")
+# Contributed By: Harshit Sidhwa
+
+# } Driver Code Ends
