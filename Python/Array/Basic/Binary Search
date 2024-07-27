@@ -1,0 +1,40 @@
+Binary Search
+
+https://www.geeksforgeeks.org/problems/binary-search-1587115620/1?page=1&category=Arrays&difficulty=Basic&sortBy=submissions
+
+solution: 
+#User function template for Python
+
+class Solution:
+    def binarysearch(self, arr, k):
+        # Code Here
+        low = 0
+        high = len(arr)-1
+        
+        while low<=high:
+            mid = (low+high)//2
+            
+            if arr[mid]<k:
+                low =mid+1
+            elif arr[mid] >k :
+                high = mid-1
+            else:
+                return mid
+        return -1
+
+
+
+#{ 
+ # Driver Code Starts
+#Initial template for Python
+
+if __name__ == "__main__":
+    t = int(input())
+    for _ in range(t):
+        k = int(input())
+        arr = list(map(int, input().split()))
+        ob = Solution()
+        res = ob.binarysearch(arr, k)
+        print(res)
+
+# } Driver Code Ends
