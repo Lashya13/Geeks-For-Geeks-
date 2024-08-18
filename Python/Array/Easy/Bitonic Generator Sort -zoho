@@ -1,0 +1,38 @@
+Bitonic Generator Sort
+
+Correct soution in online complier - but failed in geeksforgeeks need to solve
+https://www.geeksforgeeks.org/problems/bitonic-generator-sort3343/1
+
+Solution:
+
+#User function Template for python3
+
+
+class Solution:
+    def bitonicGenerator(self, arr, n):
+        # Your code goes here
+        arr_odd=[]
+        arr_even=[]
+        for i in range(n):
+            if arr[i]%2==0:
+                arr_even.append(arr[i])
+            else:
+                arr_odd.append(arr[i])
+        arr_odd.sort(reverse=True)
+        res =arr_even + arr_odd
+        return res
+
+
+#{ 
+ # Driver Code Starts
+if __name__ == '__main__': 
+    
+    t=int(input())
+    for _ in range(0,t):
+        n=int(input())
+        a = list(map(int,input().split()))
+        ob = Solution()
+        ob.bitonicGenerator(a,n)
+        print(*a)
+        
+# } Driver Code Ends
