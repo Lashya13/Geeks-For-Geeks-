@@ -1,0 +1,44 @@
+Run Length Encoding
+
+https://www.geeksforgeeks.org/problems/run-length-encoding/1
+
+Solution:
+Only the first test case passed, remaining all failed--- need to sovle again
+
+class Solution:
+    def encode(self, s : str) -> str:
+        # code here
+        
+        list1 =[]
+        list2 =[]
+        result =""
+        
+        for i in range(len(s)):
+            list1.append(s[i]+str(s.count(s[i])))
+        for i in list1:
+          if i not in list2:
+            list2.append(i)
+        
+        for i in list2:
+          result+=i 
+        
+        return result
+
+
+
+#{ 
+ # Driver Code Starts
+
+if __name__=="__main__":
+    t = int(input())
+    for _ in range(t):
+        
+        s = (input())
+        
+        obj = Solution()
+        res = obj.encode(s)
+        
+        print(res)
+        
+
+# } Driver Code Ends
